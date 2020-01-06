@@ -1,0 +1,69 @@
+<!--==========================
+      Contact Section
+    ============================-->
+    <section id="contactoMagno">
+      <div class="container-fluid">
+
+        <div class="section-magno-header">
+          <h3>Contáctenos</h3>
+        </div>
+
+        <div class="row wow fadeInUp">
+
+          <div class="col-lg-6">
+              <div class="map mb-4 mb-lg-0 d-flex justify-content-center align-items-center" style="height: 100%;">
+                <img src="assets/img/logo.png">     
+              </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-md-4 infoContacto">
+                <i class="ion-ios-location-outline"></i>
+                <p>Moreno 3114, Mar del Plata.</p>
+              </div>
+              <div class="col-md-4 infoContacto">
+                <i class="ion-ios-telephone-outline"></i>
+                <p>+54 9 223 15 4224810</p>
+              </div>
+              <div class="col-md-3 infoContacto">
+                <i class="ion-ios-email-outline"></i>
+                <p>magnomardelplata@hotmail.com</p>
+              </div><br>
+            </div>
+              
+              
+
+            <div class="formularioMagno">
+              <div id="mensajeEnviado">Su mensaje fue enviado, muchas gracias! Le contestaremos a la brevedad.</div>
+              <div id="errorEnElMensaje"></div>
+              <!-- <form action="" method="post" role="form" class="formularioDeContacto" id="formularioContacto"> -->
+              <form [formGroup]="ourForm" class="formularioDeContacto" id="formularioContacto" (onSubmit)="submitData(ourForm.value)">
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" name="name" class="form-control" formControlName="name" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor, ingresa al menos 4 caracteres" required />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="email" class="form-control" formControlName="email" name="email" id="email" placeholder="Correo electronico" data-rule="email" data-msg="Por favor, ingresa un email valido" required />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="telefono" formControlName="telefono" id="subject" placeholder="Asunto" data-rule="minlen:8" data-msg="Por favor, ingresa tu telefono" required />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" formControlName="message" rows="5" data-rule="required" data-msg="
+                  por favor, escribe un mensaje para nosotros" placeholder="Mensaje" required></textarea>
+                  <div class="validation"></div>
+                </div>
+                <div class="text-center"><input type="submit" title="Send Message" (click)="submitData(ourForm.value)" />Enviar consulta</div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #contact -->

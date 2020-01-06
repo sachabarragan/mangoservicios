@@ -1,0 +1,49 @@
+<!--==========================
+      Portfolio Section
+    ============================-->
+    <section id="portfolio" class="clearfix">
+      <div class="container">
+
+        <header class="section-header">
+          <h3 class="section-title">Nuestros trabajos</h3>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">Todos</li>
+              <li data-filter=".filter-oficinas">Oficinas/Empresas</li>
+              <li data-filter=".filter-alfombras">Hogares</li>
+              <li data-filter=".filter-hogares">Alfombras</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+          <!-- 0 -->
+          
+          <div *ngFor="let imagen of _imgService.portafolio" class="col-lg-4 col-md-6 portfolio-item {{imagen.claseFilter}}">
+            <a [href]="imagen.url" data-lightbox="portfolio" class="link-preview" title="Preview" data-title="{{imagen.titulo}}" >
+              <div class="portfolio-wrap">
+                <img [src]="imagen.url" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>{{ imagen.titulo }}</h4>
+                  <p>{{ imagen.titulo }}</p>
+                  <div>
+                    <i class="ion ion-eye"></i>
+                    <!-- <a [href]="imagen.url" data-lightbox="portfolio" data-title="{{imagen.titulo}}" class="link-preview" title="Preview"></a>
+                    -->
+                    
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+          
+
+        </div>
+
+      </div>
+    </section><!-- #portfolio -->
